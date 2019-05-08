@@ -47,6 +47,11 @@ class PostsController < ApplicationController
 
   end
 
+  #3-9
+  def destoroy
+
+  end
+
 #privateは一種の境界線で、「ここから下はcontrollerの中でしか呼び出せません」という意味があります。
 #privateはControllerファイルの一番下のendのすぐ上に書いて下さい。
 
