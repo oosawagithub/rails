@@ -10,4 +10,9 @@
 
 	</span>
 
+<!--3-8-->
+<!--fillは画像の幅と高さ formatで画像の拡張子-->
+	<p>画像</p>
+	<%= attachment_image_tag post, :image, :fill, 100, 100, format: 'jpeg' %>
+
 <% end %>
