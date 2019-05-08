@@ -48,7 +48,11 @@ class PostsController < ApplicationController
   end
 
   #3-9
-  def destoroy
+  def destroy
+
+    post = Post.find(params[:id]) #データ(レコード)を1件取得
+    post.destroy #レコードをDBから削除
+    redirect_to posts_path #post一覧画面へリダイレクト
 
   end
 

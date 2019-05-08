@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   patch 'posts/:id' => 'posts#update', as: 'update_post'
 
   #3-9
-  delete 'posts/:id' => 'post#destoroy', as: 'destoroy_post'
+  delete 'posts/:id' => 'posts#destroy', as: 'destroy_post'
 end

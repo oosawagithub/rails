@@ -11,3 +11,4 @@
 <%= attachment_image_tag @post, :image, :fill, 300, 300, format: 'jpeg' %>
 
 <%= link_to "編集", edit_post_path(@post.id) %>
+<%= link_to "削除", destroy_post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
