@@ -1,2 +1,121 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+<header>
+
+  <h1 class="headline">
+
+    <%= link_to "CARAVAN", blogs_path %>
+
+  </h1>
+
+  <div class="social">
+
+    <i class="fa fa-facebook-square"></i>
+
+    <i class="fa fa-twitter-square"></i>
+
+    <i class="fa fa-instagram"></i>
+
+  </div>
+
+</header>
+
+<nav>
+
+  <ul class="nav-list">
+
+    <li class="nav-list-item">
+
+      <a href="#">Home</a>
+
+    </li>
+
+    <li class="nav-list-item">About</li>
+    <li class="nav-list-item">Topic</li>
+
+  </ul>
+
+</nav>
+
+<div class="main-visual">
+
+  <div class="main-visual-content">
+
+    <p class="main-visual-text">
+      The world is a book<br>
+      and those who do not travel<br>
+      read only one page.
+    </p>
+
+    <p class="main-visual-name">
+      St. Augustine
+    </p>
+
+  </div>
+
+</div>
+
+<main class="clearfix">
+
+	<section class="single-blog">
+
+  <h2 class="blog-headline">Blog</h2>
+
+  <section class="blog-box">
+
+    <h3 class="blog-box-headline">
+
+      <%= @blog.title %>
+
+    </h3>
+
+    <div class="blog-box-content">
+
+      <p class="category">
+
+        <%= @blog.category %>
+
+      </p>
+      <p class="blog-date">
+
+        <%= @blog.created_at %>
+
+      </p>
+
+    </div>
+
+    <%= image_tag "img/forest.jpg", class:"single-image" %>
+
+    <p class="single-text">
+
+      <%= @blog.body %>
+
+    </p>
+    <a href="#">編集</a>
+    <a href="#">削除</a>
+
+    <div class="author-case clearfix">
+
+      <div class="author-image"></div>
+
+      <div class="author-box">
+
+        <p class="author-name">By JOHN SMITH / Photographer</p>
+
+        <p class="author-text">His black and white landscapes, often captured at times<br>
+        of the day and night when the light is fleeting, or in poor<br>
+        weather conditions, such as rain, fog, or snow, are<br>reminiscent of the calm in a storm all with an ethereal<br>quality. </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</section>
+
+</main>
+
+<footer>
+
+<p class="footer-text">© All rights recerved by Infratop.Inc.</p>
+
+</footer>
