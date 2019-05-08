@@ -41,6 +41,9 @@ class BlogsController < ApplicationController
 
   end
 
+  def destoroy
+  end
+
   	private
   	def blog_params
   		params.require(:blog).permit(:title, :category, :body)
