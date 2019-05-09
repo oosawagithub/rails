@@ -1,0 +1,24 @@
+<div class="edit-box">
+<h1>Edtind Book</h1>
+
+<%= form_for(@book) do |f| %>
+
+<div class="update-title">
+<h5>Title</h5>
+<%= f.text_field :title %>
+</div>
+
+<div class="update-body">
+<h5>Body</h5>
+<%= f.text_area :body %>
+</div>
+
+<div class="update-box">
+<%= f.submit 'Update Book' %>
+</div>
+
+<P><%= link_to 'show', book_path(@book.id), class: "show_#{@book}" %>|<%= link_to 'Back', books_path(:back), class: "back" %></P>
+
+<% end %>
+
+</div>

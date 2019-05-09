@@ -1,0 +1,19 @@
+<div class="update-message">
+<% if flash[:update] %>
+	<p><%= flash[:update] %></p>
+<% end %>
+</div>
+
+<div class="show-box">
+
+<div class="show-box1">
+<p>Title:<%= @book.title %></p>
+</div>
+
+<div class="show-box2">
+<p>Body:<%= @book.body %></p>
+</div>
+
+<P><%= link_to 'Edit', edit_book_path(@book.id), class: "edit_#{@book}" %>|<%= link_to 'Back', books_path(:back), class: "back" %></P>
+
+</div>

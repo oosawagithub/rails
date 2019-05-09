@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+ /*top画面*/
+ .top-box{
+ 	padding: 40px;
+ }
+
+ .top-text1{
+ 	padding: 30px;
+ }
+
+ .top-text2{
+ 	padding: 0 0 30px 30px;
+ }
+
+ .top-start{
+ 	padding-left: 30px;
+ }
+
+/*index*/
+ .new-box h2{
+ padding: 10px 0;
+ }
+
+.destroy-message{
+	padding: 40px 40px 0 20px;
+	color: #66FF99;
+}
+
+.index-box{
+	padding: 20px;
+}
+
+ .table{
+ 	/*テーブルのセルの間に余白を作る*/
+ 	border-collapse: separate;
+ 	/*セル間の余白の設定1つ目が列2つ目が行*/
+ 	border-spacing: 10px 0;
+ }
+
+/*showページ*/
+.update-message{
+	padding: 40px 0 0 50px;
+	color: #66FF99;
+}
+.show-box{
+	width: 100%;
+	padding: 40px 0 0 50px;
+}
+
+.show-box1{
+	padding-bottom: 20px;
+}
+
+.show-box2{
+	padding-bottom: 20px;
+}
+
+/*edit ページ*/
+.edit-box{
+	padding: 20px 0 0 30px;
+}
+
+.update-title{
+	padding-bottom: 10px;
+}
+
+.update-body{
+	padding-bottom: 5px;
+}
+
+.update-box{
+	padding-bottom: 5px;
+}
+
+/*create*/
+.create-message{
+	color: #66FF99;
+	padding: 20px 0 0 20px;
+}
+
+.create-box{
+	padding: 20px 0 0 20px;
+}
+
+.create-box h5{
+	color: #66FF99;
+}
+
+.create-title{
+	padding: 10px 0;
+}
+
+.create-body{
+	padding-bottom: 10px;
+}
