@@ -28,11 +28,11 @@ class BooksController < ApplicationController
 
   def update
 
-    book = Book.find(params[:id])
-    book.update(book_params)
+    @book = Book.find(params[:id])
+    @book.update(book_params)
     flash[:update] = "Book was successfully updated."
     #showの画面に遷移する
-    redirect_to book_path(book.id)
+    redirect_to book_path(@book.id)
 
   end
 

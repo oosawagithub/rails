@@ -27,7 +27,7 @@
 
 		<td><%= book.body %></td>
 
-		<td><%= link_to 'show', "books/#{book.id}", class: "show_#{book.id}" %></td>
+		<td><%= link_to 'show', book_path(book), class: "show_#{book.id}" %></td>
 
 		<td><%= link_to 'edit', edit_book_path(book), class: "edit_#{book.id}" %></td>
 
