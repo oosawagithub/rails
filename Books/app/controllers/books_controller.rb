@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
 
+   before_action :authenticate_user!,except: [:top]
+
 	 before_action :current_user, only: [:edit, :destroy]
 
   def new
