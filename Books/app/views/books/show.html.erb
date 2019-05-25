@@ -1,0 +1,78 @@
+<% if flash[:create] %>
+	<p><%= flash[:create] %></p>
+<% end %>
+
+<% if flash[:update] %>
+  <p><%= flash[:update] %></p>
+<% end %>
+
+<div class="container">
+  <div class ="row">
+    <div class="col-xs-3">
+     <h2>User Info</h2>
+      <table class="table">
+       <tr><%= attachment_image_tag @book.user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg" %></tr>
+
+      <tr>
+       <th>name:</th>
+       <th><%= @book.user.name %></th>
+      </tr>
+
+      <tr>
+       <th>introduction:</th>
+       <th><%= @book.user.introduction %></th>
+      <tr>
+     </table>
+
+<div class="row">
+  <%= link_to "", edit_user_path(current_user),class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+
+<!--form_for部分-->
+<!--新規投稿-->
+   <%= form_for(@bookq) do |f| %>
+
+    <div class="new-box">
+	   <h2>New book</h2>
+
+      <div class = "new-title">
+	     <h4>Title</h4>
+	      <%= f.text_field :title, class: "book_title" %>
+     </div>
+
+      <div class="new-body">
+	     <h4>Body</h4>
+	      <%= f.text_area :body, class: "book_body" %>
+      </div>
+
+       <div class="new-submit">
+	      <%= f.submit 'Create Book' %>
+       </div>
+
+    </div>
+
+  <% end %>
+
+ </div>
+   </div>
+
+  <div class="col-xs-9">
+   <h2>Book detail</h2>
+    <table class="table">
+	   <tr><td><%= attachment_image_tag @book.user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg" %><%= link_to @book.user.name, user_path(@book.user.id)%></td>
+
+         <td><%= @book.title %></td>
+
+         <td><%= @book.body %></td>
+
+         <% if current_user.id == @book.user.id %>
+          <td><%= link_to "edit", edit_book_path(@book) %></td>
+          <td><%= link_to'destroy',book_path(@book),method: :delete, "data-confirm" => "本当に消しますか?" %></td>
+         <% end %>
+
+    </tr>
+
+   </table>
+ </div>
+</div>
+
+</div>

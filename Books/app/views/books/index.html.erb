@@ -1,0 +1,72 @@
+<% if @book.errors.any? %>
+ <%= @book.errors.count %>errors prohibited this obj from being saved:
+ <ul>
+  <% @book.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<div class="container">
+  <div class ="row">
+    <div class="col-xs-3">
+     <h2>User Info</h2>
+      <table class="table">
+       <tr><%= attachment_image_tag @user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg" %></tr>
+        <tr>
+         <th>name:</th>
+         <th><%= @user.name %></th>
+        </tr>
+        <tr>
+         <th>introduction:</th>
+         <th><%= @user.introduction %></th>
+   		<tr>
+      </table>
+
+       <%= link_to "", edit_user_path(current_user),class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+
+<!--form_for部分-->
+<!--新規投稿-->
+        <%= form_for(@book) do |f| %>
+		 <h2>New book</h2>
+
+	  	  <h4>Title</h4>
+		   <%= f.text_field :title, class: "book_title" %>
+
+		  <h4>Body</h4>
+		    <%= f.text_area :body, class: "book_body" %>
+
+		  <p><%= f.submit 'Create Book' %></p>
+
+		<% end %>
+
+	</div>
+
+	  <div class="col-xs-9">
+	  	<h2>Books</h2>
+		<!--テーブル表示-->
+	   <table class="table">
+
+		 <thred>
+		  <tr>
+		   <th></th>
+		   <th>Title</th>
+		   <th>Body</th>
+	     </tr>
+		</thred>
+
+	    <!-- eachは繰り返し処理のなかは@userではなくuser -->
+	   <% @books.each do |book| %>
+	   <!--bookにuser idが紐づいていればbook.userでbookを投稿したuserを判別できる-->
+	    <tr>
+		 <td><%= attachment_image_tag book.user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg" %></td>
+
+		 <td><%= link_to book.title, book_path(book) %></td>
+
+		 <td><%= book.body %></td>
+	    </tr>
+	   <% end %>
+	  </table>
+	</div>
+  </div>
+</div>

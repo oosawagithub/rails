@@ -1,0 +1,68 @@
+<div class="container">
+  <div class ="row">
+    <div class="col-xs-3">
+     <h2>User Info</h2>
+      <table class="table">
+       <tr><%= attachment_image_tag @user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg" %></tr>
+       <tr>
+        <th>name:</th>
+        <th><%= @user.name %></th>
+       </tr>
+       <tr>
+        <th>introduction:</th>
+        <th><%= @user.introduction %></th>
+       <tr>
+      </table>
+
+       <div class="row">
+        <%= link_to "", edit_user_path(current_user),class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+
+<!--form_for部分-->
+<!--新規投稿-->
+         <%= form_for(@book) do |f| %>
+
+	       <h2>New book</h2>
+
+		<h4>Title</h4>
+		 <%= f.text_field :title, class: "book_title" %>
+
+		<h4>Body</h4>
+		 <%= f.text_area :body, class: "book_body" %>
+
+		 <%= f.submit 'Create Book' %>
+
+		</div>
+
+	    <% end %>
+
+   </div>
+
+<!-- eachは繰り返し処理 -->
+	<!--テーブル表示-->
+    <div class="col-xs-9">
+	 <table class="table">
+	  <h2>Users</h2>
+	  <thred>
+	   <tr>
+		<th>image</th>
+		<th>name</th>
+		<th></th>
+	  </tr>
+     </thred>
+
+	<!-- eachは繰り返し処理 -->
+	   <% @users.each do |user| %>
+	    <tr>
+		 <td><%= attachment_image_tag user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg"  %></td>
+
+		 <td><%= user.name %></td>
+
+		 <td><%= link_to 'show', user_path(user.id) %></td>
+
+	    </tr>
+	   <% end %>
+
+	  </table>
+	 </div>
+  </div>
+</div>
