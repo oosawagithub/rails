@@ -6,7 +6,7 @@
   <p><%= flash[:update] %></p>
 <% end %>
 
-<div class="container">
+<div class="container clearfix">
   <div class ="row">
     <div class="col-xs-3">
      <h2>User Info</h2>
@@ -56,15 +56,21 @@
   <div class="col-xs-9">
    <h2>Book detail</h2>
     <table class="table">
-	   <tr><td><%= attachment_image_tag @book.user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg" %><br><%= link_to @book.user.name, user_path(@book.user.id)%></td>
+	   <tr>
+         <td>
+          <%= link_to user_path(@book.user.id) do%>
+          <%= attachment_image_tag @book.user, :profile_image, :fill, 50,50,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg",size:'50x50' %><br>
+           <%= @book.user.name %>
+         <% end %>
+         </td>
 
          <td><%= @book.title %></td>
 
          <td><%= @book.body %></td>
 
          <% if current_user.id == @book.user.id %>
-          <td><%= link_to "edit", edit_book_path(@book) %></td>
-          <td><%= link_to'destroy',book_path(@book),method: :delete, "data-confirm" => "本当に消しますか?"  %></td>
+          <td><button type="button" class="btn btn-success"><%= link_to "edit", edit_book_path(@book) %></button></td>
+          <td><button type="button" class="btn btn-danger"><%= link_to'destroy',book_path(@book),method: :delete, "data-confirm" => "本当に消しますか?"  %></button></td>
          <% end %>
 
 

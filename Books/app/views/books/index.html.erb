@@ -59,7 +59,7 @@
 	   <% @books.each do |book| %>
 	   <!--bookにuser idが紐づいていればbook.userでbookを投稿したuserを判別できる-->
 	    <tr>
-		 <td><%= attachment_image_tag book.user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg" %></td>
+		 <td><%= attachment_image_tag book.user, :profile_image, :fill, 50,50,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg",size:'50x50' %></td>
 
 		 <td><%= link_to book.title, book_path(book) %></td>
 

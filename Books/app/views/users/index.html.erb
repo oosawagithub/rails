@@ -53,7 +53,7 @@
 	<!-- eachは繰り返し処理 -->
 	   <% @users.each do |user| %>
 	    <tr>
-		 <td><%= attachment_image_tag user, :profile_image, :fill, 100,100,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg"  %></td>
+		 <td><%= attachment_image_tag user, :profile_image, :fill, 50,50,format:'jpeg',class: "pull-left profile-img", fallback: "no_image.jpg",size:'50x50'  %></td>
 
 		 <td><%= user.name %></td>
 

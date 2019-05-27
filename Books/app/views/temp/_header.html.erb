@@ -6,19 +6,31 @@
       <nav>
       <ul class="nav navbar-nav navbar-right">
 		<% if user_signed_in? %>
-			<li><%= link_to "Home", user_path(current_user.id) %></li>
-			<li><%= link_to "Users", users_path %></li>
-			<li><%= link_to "Books", books_path %></li>
-			<li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+			<li><%= link_to user_path(current_user.id), class: "nav-bar" do %>
+				<i class="glyphicon glyphicon-home" aria-hidden="true"></i>Home<% end %></li>
+			<li><%= link_to users_path,class: "nav-bar" do %>
+				<i class="glyphicon glyphicon-user" aria-hidden="true"></i>Users<% end %></li>
+			<li><%= link_to books_path,class: "nav-bar" do %>
+				<i class="glyphicon glyphicon-book" aria-hidden="true"></i>Books<% end %>
+			</li>
+			<li><%= link_to destroy_user_session_path, class: "nav-bar", method: :delete do %>
+				<i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>logout<% end %>
+			</li>
 		</ul>
 	</nav>
 		<% else %>
 		<nav>
 		 <ul class="nav navbar-nav navbar-right">
-			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "About",page_path('home/about') %></li>
-			<li><%= link_to "sign up", new_user_registration_path %></li>
-			<li><%= link_to "login", new_user_session_path %></li>
+			<li><%= link_to root_path, class: "nav-bar" do %><i class="glyphicon glyphicon-home" aria-hidden="true"></i>Home<% end %></li>
+			<li><%= link_to page_path('home/about'),class: "nav-bar" do %>
+				<i class="glyphicon glyphicon-link" aria-hidden="true"></i>About<% end %>
+			</li>
+			<li><%= link_to new_user_registration_path,class: "nav-bar" do %>
+				<i class="glyphicon glyphicon-edit" aria-hidden="true"></i>sign up<% end %>
+			</li>
+			<li><%= link_to new_user_session_path, class: "nav-bar" do %>
+				<i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>login<% end %>
+			</li>
 		</ul>
 		<% end %>
 	   </ul>

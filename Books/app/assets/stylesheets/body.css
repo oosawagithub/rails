@@ -19,3 +19,18 @@ License URI: http://wrapbootstrap.com
 	font-size: 20px;
 	color: white;
 }
+
+a.nav-bar .glyphicon{
+	color: #eee;
+	padding-right: 10px;
+}
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+td{
+	font-size: 14px;
+}
